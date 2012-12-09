@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Dumindu Madunuwan -- Developer -- http://dumindu.tumblr.com/
+
+# THANKS
+
+    http://html5boilerplate.com/
+    http://modernizr.com/
+    http://jquery.com/
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
