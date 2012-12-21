@@ -246,12 +246,6 @@ blockquote cite a, blockquote cite a:visited {
 	color: #D4C19B;
 }
 
-code{
-	font-size: 0.875em;
-	color:#141414;
-	background: rgba(255, 255, 255, 0.5);
-}
-
 /* Figure
    ========================================================================== */
 figure:before, figure:after ,.figure:before, .figure:after{
@@ -266,6 +260,7 @@ figure, .figure{
   margin: 0 0 0.75em;
   background: rgba(0, 0, 0, 0.12);
   border: 0.0625em solid #141414;
+  border-radius: 0.1875em;
   box-shadow: 0 0 0.0625em rgba(0, 0, 0, 0.25);
 }
 
@@ -285,8 +280,112 @@ figure figcaption p, figure figcaption ul, figure figcaption ol, figure figcapti
   margin: 0 0 0.428571429em;
 }
 
+/* =============================================================================
+   prettify
+   ========================================================================== */
+.com { color: #777777; }
+.lit { color: #9fd3e6; }
+.pun, .opn, .clo { color: #eeeeee; }
+.fun { color: #dc322f; }
+.str, .atv { color: #b1d631; }
+.kwd, .linenums .tag { color: #CDA869; }
+.typ, .atn, .dec, .var { color: #b1d631; }
+.pln { color: #8F9D6A; }
+.prettyprint {
+  padding: 0.428571429em;
+  background-color: rgba(0, 0, 0, 0.12);
+  border: 0.071428571em solid #141414;
+  border-radius: 0.214285714em;
+  box-shadow: 0 0 0.071428571em rgba(0, 0, 0, 0.25);
+}
+.prettyprint.linenums {
+  -webkit-box-shadow: inset 2.857142857em 0 0 #1F1F1F, inset 2.928571429em 0 0 #141414;
+  -moz-box-shadow: inset 2.857142857em 0 0 #1F1F1F, inset 2.928571429em 0 0 #141414;
+  box-shadow: inset 2.857142857em 0 0 #1F1F1F, inset 2.928571429em 0 0 #141414;
+}
 
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin: 0 0 0 2.357142857em; /* IE indents via margin-left */
+} 
+ol.linenums li {
+  padding-left: 0.857142857em;
+  color: #bebec5;
+  line-height: 1.285714286em;
+  text-shadow: 0 0.071428571em 0 #000;
+}
+pre {
+	font-size: 0.857142857em;
+  line-height: 1.285714286em;
+  max-width: 100;
+  overflow-x: auto;
+}
+code{
+	background: rgba(255, 255, 255, 0.12);
+  padding: 0.142857143em 0.285714286em;
+}
+pre, code {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: 0.875em;
+}
 
+/* =============================================================================
+   nanoScroller
+   ========================================================================== */
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano .content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano .content:focus {
+  outline: thin dotted;
+}
+.nano .content::-webkit-scrollbar {
+  visibility: hidden;
+}
+.has-scrollbar .content::-webkit-scrollbar {
+  visibility: visible;
+}
+.nano > .pane {
+  background : rgba(0,0,0,.25);
+  position   : absolute;
+  width      : 0.625em;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01; 
+  -webkit-transition    : .2s;
+  -moz-transition       : .2s;
+  -o-transition         : .2s;
+  transition            : .2s;
+  -moz-border-radius    : 0.3125em;
+  -webkit-border-radius : 0.3125em;  
+  border-radius         : 0.3125em;
+}
+.nano > .pane > .slider {
+  background: #444;
+  background: rgba(0,0,0,.5);
+  position              : relative;
+  margin                : 0 1px;
+  -moz-border-radius    : 0.1875em;
+  -webkit-border-radius : 0.1875em;  
+  border-radius         : 0.1875em;
+}
+.nano:hover > .pane, .pane.active, .pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
 
 
 
