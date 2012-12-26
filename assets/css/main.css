@@ -22,7 +22,7 @@ input,
 select,
 textarea {
   /*user defined*/
-	color: #CCCCCC;
+	color: #999999;
 }
 
 /*user defined*/
@@ -152,8 +152,7 @@ h5, .h5,
 h6, .h6 {
   line-height: 0.9625;
   font-weight: bold;
-  color: #D6D6D6;
-  text-shadow: 0 0.0625em 0 #000000;
+  text-shadow: 0 0.0625em 0.0625em #000000;
 }
 
 h1, .h1 {
@@ -179,13 +178,13 @@ h4, .h4 {
 h5, .h5 {
 	font-size: 0.875em;
 	margin:0.857142857em 0;
-	color: #999999;
+	color: #777777;
 }
 
 h6, .h6 {
 	font-size: 0.875em;
 	margin:0.857142857em 0;
-	color: #666666;
+	color: #555555;
 }
 
 p, blockquote, ul, ol, dl, menu {
@@ -222,20 +221,21 @@ dd {
   margin-left: 0.75em;
 }
 
-blockquote, blockquote p{
-	color: #BD9F65;
+blockquote, blockquote p, blockquote cite{
+	color: #666666;
+	text-shadow: 0 0.0625em 0.0625em #000000;
 	font-style: italic;
 }
 
 blockquote{
-	border-left: 0.125em solid #C89F45;
+	border-left: 0.125em solid #555555;
 	padding-left: 0.75em;
 }
 
 blockquote cite {
 	display: block;
 	font-size: 0.875em;
-	color: #BD9F65;
+	text-shadow: 0 0.071428571em 0.071428571em #000000;
 }
 
 blockquote cite:before {
@@ -243,7 +243,8 @@ blockquote cite:before {
 }
 
 blockquote cite a, blockquote cite a:visited {
-	color: #D4C19B;
+	color: #999999;
+	text-shadow: 0 0.071428571em 0.071428571em #000000;
 }
 
 /* Figure
@@ -275,6 +276,8 @@ figure img, .figure img{
 figure figcaption , .figure .figcaption{
   padding: 0.428571429em;
   font-size: 0.875em;
+  color: #666666;
+	text-shadow: 0 0.071428571em 0.071428571em #000000;
 }
 figure figcaption p, figure figcaption ul, figure figcaption ol, figure figcaption dl, figure figcaption blockquote, .figure .figcaption p, .figure .figcaption ul, .figure .figcaption ol, .figure .figcaption dl, .figure .figcaption blockquote {
   margin: 0 0 0.428571429em;
@@ -299,9 +302,9 @@ figure figcaption p, figure figcaption ul, figure figcaption ol, figure figcapti
   box-shadow: 0 0 0.071428571em rgba(0, 0, 0, 0.25);
 }
 .prettyprint.linenums {
-  -webkit-box-shadow: inset 2.857142857em 0 0 #1F1F1F, inset 2.928571429em 0 0 #141414;
-  -moz-box-shadow: inset 2.857142857em 0 0 #1F1F1F, inset 2.928571429em 0 0 #141414;
-  box-shadow: inset 2.857142857em 0 0 #1F1F1F, inset 2.928571429em 0 0 #141414;
+  -webkit-box-shadow: inset 2.857142857em 0 0 rgba(0, 0, 0, 0.12), inset 2.928571429em 0 0 rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: inset 2.857142857em 0 0 rgba(0, 0, 0, 0.12), inset 2.928571429em 0 0 rgba(0, 0, 0, 0.24);
+  box-shadow: inset 2.857142857em 0 0 rgba(0, 0, 0, 0.12), inset 2.928571429em 0 0 rgba(0, 0, 0, 0.24);
 }
 
 /* Specify class=linenums on a pre to get line numbering */
@@ -321,7 +324,7 @@ pre {
   overflow-x: auto;
 }
 code{
-	background: rgba(255, 255, 255, 0.12);
+	background: rgba(0, 0, 0, 0.25);
   padding: 0.142857143em 0.285714286em;
 }
 pre, code {
@@ -377,7 +380,7 @@ pre, code {
   background: #444;
   background: rgba(0,0,0,.5);
   position              : relative;
-  margin                : 0 1px;
+  margin                : 0 0.0625em;
   -moz-border-radius    : 0.1875em;
   -webkit-border-radius : 0.1875em;  
   border-radius         : 0.1875em;
