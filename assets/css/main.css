@@ -34,9 +34,9 @@ html{
 }
 
 body {
-  font-size: 1em;
-  line-height: 1.4;
+	font-size: 1em;
   /*user defined*/
+	line-height: 1.5;
   background: #222222;
   width:100%;
   height: 100%;
@@ -82,6 +82,9 @@ hr {
 
 img {
 	vertical-align: middle;
+	/*user defined*/
+	height: auto;
+	max-width: 100%;
 }
 
 /*
@@ -152,50 +155,66 @@ h5, .h5,
 h6, .h6 {
   line-height: 0.9625;
   font-weight: bold;
-  text-shadow: 0 0.0625em 0.0625em #000000;
 }
 
 h1, .h1 {
   font-size: 1.375em;
   margin: 0.545454545em 0;
+  text-shadow: 0 0.045454545em 0.045454545em #000000;
 }
 
 h2, .h2 {
 	font-size: 1.125em;
 	margin: 0.666666667em 0;
+	text-shadow: 0 0.055555556em 0.055555556em #000000;
 }
 
 h3, .h3 {
 	font-size: 1em;
 	margin: 0.75em 0;
+	text-shadow: 0 0.0625em 0.0625em #000000;
 }
 
-h4, .h4 {
+h4, .h4,
+h5, .h5,
+h6, .h6 {
 	font-size: 0.875em;
 	margin:0.857142857em 0;
+	text-shadow: 0 0.071428571em 0.071428571em #000000;
 }
 
 h5, .h5 {
-	font-size: 0.875em;
-	margin:0.857142857em 0;
 	color: #777777;
 }
 
 h6, .h6 {
-	font-size: 0.875em;
-	margin:0.857142857em 0;
+	color: #555555;
+}
+
+h1 a, h1 a:visited, h1 a:hover, .h1 a, .h1 a:visited, .h1 a:hover,
+h2 a, h2 a:visited, h2 a:hover, .h2 a, .h2 a:visited, .h2 a:hover,
+h3 a, h3 a:visited, h3 a:hover, .h3 a, .h3 a:visited, .h3 a:hover,
+h4 a, h4 a:visited, h4 a:hover, .h4 a, .h4 a:visited, .h4 a:hover {
+	color: #999999;
+}
+
+h5 a, h5 a:visited, h5 a:hover, .h5 a, .h5 a:visited, .h5 a:hover{
+	color: #777777;
+}
+
+h6 a, h6 a:visited, h6 a:hover, .h6 a, .h6 a:visited, h6 a:hover{
 	color: #555555;
 }
 
 p, blockquote, ul, ol, dl, menu {
 	font-size: 1em;
-  margin: 0 0 1.4em;
+  margin: 0 0 1.3125em;
 }
 
 ol, ul{
 	list-style-position: outside;
 	padding: 0;
-	margin-left: 1.4em;
+	margin-left: 1.3125em;
 }
 
 dl{
@@ -221,6 +240,16 @@ dd {
   margin-left: 0.75em;
 }
 
+pre, code {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: 0.875em;
+}
+
+code{
+	background: rgba(0, 0, 0, 0.25);
+  padding: 0.142857143em 0.285714286em;
+}
+
 blockquote, blockquote p, blockquote cite{
 	color: #666666;
 	text-shadow: 0 0.0625em 0.0625em #000000;
@@ -244,7 +273,6 @@ blockquote cite:before {
 
 blockquote cite a, blockquote cite a:visited {
 	color: #999999;
-	text-shadow: 0 0.071428571em 0.071428571em #000000;
 }
 
 /* Figure
@@ -269,7 +297,6 @@ figure img, .figure img{
   display: block;
   width: 100%;
   float: left;
-  height: auto;
   padding: 0.375em;
 }
 
@@ -323,14 +350,14 @@ pre {
   max-width: 100;
   overflow-x: auto;
 }
-code{
+/*code{
 	background: rgba(0, 0, 0, 0.25);
   padding: 0.142857143em 0.285714286em;
-}
-pre, code {
+}*/
+/*pre, code {
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
   font-size: 0.875em;
-}
+}*/
 
 /* =============================================================================
    nanoScroller
@@ -506,11 +533,283 @@ article {
    Theses examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-
+  
+/* =============================================================================
+   Typography For Tablet
+   ========================================================================== */
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+	h1, .h1 {
+	  font-size: 1.5625em;
+	  margin: 0.56em 0;
+	  text-shadow: 0 0.08em 0.08em #000000;
+	}
+	
+	h2, .h2 {
+		font-size: 1.25em;
+		margin: 0.7em 0;
+		text-shadow: 0 0.1em 0.1em #000000;
+	}
+	
+	h3, .h3 {
+		font-size: 1.125em;
+		margin: 0.777777778em 0;
+		text-shadow: 0 0.111111111em 0.111111111em #000000;
+	}
+	
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		font-size: 1em;
+		margin:0.875em 0;
+		text-shadow: 0 0.125em 0.125em #000000;
+	}
+	
+	p, blockquote, ul, ol, dl, menu {
+		font-size: 1.125em;
+	  margin: 0 0 1.333333333em;
+	}
+	
+	ol, ul{
+		margin-left: 1.333333333em;
+	}
+	
+	dl{
+		margin-left: 0.777777778em;
+	}
+	
+	ul li ul, ul li ol, ol li ul, ol li ol {
+		font-size:inherit;
+		margin-top: 0.777777778em;
+		margin-bottom: 0.777777778em;
+	}
+	
+	dt {
+		font-size:0.888888889em;
+	}
+	
+	dd {
+	  margin-left: 0.777777778em;
+	}
+	
+	pre, code {
+	  font-size: 0.888888889em;
+	}
+	
+	code{
+		padding: 0.1875em 0.375em;
+	}
+	
+	blockquote p{
+		font-size: inherit;
+	}
+	
+	blockquote, blockquote p{
+		text-shadow: 0 0.111111111em 0.111111111em #000000;
+	}
+	
+	blockquote{
+		border-left: 0.222222222em solid #555555;
+		padding-left: 0.777777778em;
+	}
+	
+	blockquote cite {
+		font-size: 0.888888889em;
+		text-shadow: 0 0.125em 0.125em #000000;
+	}
+	
+	hr {
+		height: 0.125em;
+		margin: 1.125em 0;
+		border-top: 0.125em solid #141414;
+	  box-shadow: 0 0 0.5em rgba(255, 255, 255, 0.12);
+	}
+	
+	article{
+		padding: 0 0.666666667em 0;
+	}
+
 }
 
+/* =============================================================================
+   Typography For Desktop
+   ========================================================================== */
+@media only screen and (min-width: 76.5em) {
+	h1, .h1 {
+	  font-size: 1.75em;
+	  margin: 0.571428571em 0;
+	  text-shadow: 0 0.142857143em 0.142857143em #000000;
+	}
+	
+	h2, .h2 {
+		font-size: 1.375em;
+		margin: 0.727272727em 0;
+		text-shadow: 0 0.181818182em 0.181818182em #000000;
+	}
+	
+	h3, .h3 {
+		font-size: 1.25em;
+		margin: 0.8em 0;
+		text-shadow: 0 0.2em 0.2em #000000;
+	}
+	
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		font-size: 1.125em;
+		margin:0.888888889em 0;
+		text-shadow: 0 0.222222222em 0.222222222em #000000;
+	}
+	
+	p, blockquote, ul, ol, dl, menu {
+		font-size: 1.25em;
+	  margin: 0 0 1.35em;
+	}
+	
+	ol, ul{
+		margin-left: 1.35em;
+	}
+	
+	dl{
+		margin-left: 0.8em;
+	}
+	
+	ul li ul, ul li ol, ol li ul, ol li ol {
+		font-size:inherit;
+		margin-top: 0.8em;
+		margin-bottom: 0.8em;
+	}
+	
+	dt {
+		font-size:0.9em;
+	}
+	
+	dd {
+	  margin-left: 0.8em;
+	}
+	
+	pre, code {
+	  font-size: 0.9em;
+	}
+	
+	code{
+		padding: 0.222222222em 0.444444444em;
+	}
+	
+	blockquote p{
+		font-size: inherit;
+	}
+	
+	blockquote, blockquote p{
+		text-shadow: 0 0.2em 0.2em #000000;
+	}
+	
+	blockquote{
+		border-left: 0.3em solid #555555;
+		padding-left: 0.8em;
+	}
+	
+	blockquote cite {
+		font-size: 0.9em;
+		text-shadow: 0 0.222222222em 0.222222222em #000000;
+	}
+	
+	hr {
+		height: 0.25em;
+		margin: 1.25em 0;
+		border-top: 0.25em solid #141414;
+	  box-shadow: 0 0 1em rgba(255, 255, 255, 0.12);
+	}
+}
+/* =============================================================================
+   Typography For TV
+   ========================================================================== */
+@media only screen and (min-width: 114em) {
+	h1, .h1 {
+	  font-size: 2em;
+	  margin: 0.5625em 0;
+	  text-shadow: 0 0.1875em 0.1875em #000000;
+	}
+	
+	h2, .h2 {
+		font-size: 1.5625em;
+		margin: 0.72em 0;
+		text-shadow: 0 0.24em 0.24em #000000;
+	}
+	
+	h3, .h3 {
+		font-size: 1.375em;
+		margin: 0.818181818em 0;
+		text-shadow: 0 0.272727273em 0.272727273em #000000;
+	}
+	
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		font-size: 1.25em;
+		margin:0.9em 0;
+		text-shadow: 0 0.3em 0.3em #000000;
+	}
+	
+	p, blockquote, ul, ol, dl, menu {
+		font-size: 1.375em;
+	  margin: 0 0 1.363636364em;
+	}
+	
+	ol, ul{
+		margin-left: 1.363636364em;
+	}
+	
+	dl{
+		margin-left: 0.818181818em;
+	}
+	
+	ul li ul, ul li ol, ol li ul, ol li ol {
+		font-size:inherit;
+		margin-top: 0.818181818em;
+		margin-bottom: 0.818181818em;
+	}
+	
+	dt {
+		font-size:0.909090909em;
+	}
+	
+	dd {
+	  margin-left: 0.818181818em;
+	}
+	
+	pre, code {
+	  font-size: 0.909090909em;
+	}
+	
+	code{
+		padding: 0.25em 0.5em;
+	}
+	
+	blockquote p{
+		font-size: inherit;
+	}
+	
+	blockquote, blockquote p{
+		text-shadow: 0 0.272727273em 0.272727273em #000000;
+	}
+	
+	blockquote{
+		border-left: 0.363636364em solid #555555;
+		padding-left: 0.818181818em;
+	}
+	
+	blockquote cite {
+		font-size: 0.909090909em;
+		text-shadow: 0 0.3em 0.3em #000000;
+	}
+	
+	hr {
+		height: 0.375em;
+		margin: 1.375em 0;
+		border-top: 0.375em solid #141414;
+	  box-shadow: 0 0 2em rgba(255, 255, 255, 0.12);
+	}
+}
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min-resolution: 144dpi) {
     /* Style adjustments for high resolution devices */
