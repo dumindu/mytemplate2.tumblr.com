@@ -237,13 +237,19 @@ dd {
 }
 
 pre, code {
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  font-size: 0.75em;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: 0.875em;
+  line-height: 1.5em;
+	background: rgba(0, 0, 0, 0.25);
+  padding: 0.3125em;
+}
+p pre, p code{
+	font-size: 0.875em;
 }
 
-code{
-	background: rgba(0, 0, 0, 0.25);
-  padding: 0.25em 0.5em;
+pre {
+	max-width: 100;
+  overflow-x: auto;
 }
 
 blockquote, blockquote p{
@@ -319,19 +325,20 @@ figure figcaption p, figure figcaption ul, figure figcaption ol, figure figcapti
 .kwd, .linenums .tag { color: #CDA869; }
 .typ, .atn, .dec, .var { color: #b1d631; }
 .pln { color: #8F9D6A; }
+
 .prettyprint {
-  padding: 0.428571429em;
-  background-color: rgba(0, 0, 0, 0.12);
+	padding: 0.5em;
   border: 0.071428571em solid #141414;
   border-radius: 0.214285714em;
   box-shadow: 0 0 0.071428571em rgba(0, 0, 0, 0.25);
 }
 .prettyprint.linenums {
-  -webkit-box-shadow: inset 2.857142857em 0 0 rgba(0, 0, 0, 0.12), inset 2.928571429em 0 0 rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: inset 2.857142857em 0 0 rgba(0, 0, 0, 0.12), inset 2.928571429em 0 0 rgba(0, 0, 0, 0.24);
-  box-shadow: inset 2.857142857em 0 0 rgba(0, 0, 0, 0.12), inset 2.928571429em 0 0 rgba(0, 0, 0, 0.24);
+	padding: 0.5em 0;
+	box-shadow: inset 2.857142857em 0 0 #141414, inset 2.928571429em 0 0 #111111;
 }
-
+.prettyprint.linenums ol{
+	font-size: 1em;
+}
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
   margin: 0 0 0 2.357142857em; /* IE indents via margin-left */
@@ -342,20 +349,6 @@ ol.linenums li {
   line-height: 1.285714286em;
   text-shadow: 0 0.071428571em 0 #000;
 }
-pre {
-	font-size: 0.857142857em;
-  line-height: 1.285714286em;
-  max-width: 100;
-  overflow-x: auto;
-}
-/*code{
-	background: rgba(0, 0, 0, 0.25);
-  padding: 0.142857143em 0.285714286em;
-}*/
-/*pre, code {
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  font-size: 0.875em;
-}*/
 
 /* =============================================================================
    nanoScroller
@@ -554,12 +547,12 @@ article {
 		font-size: 0.9375em;
 	}
 	
-	p, blockquote, ul, ol, dl, menu {
+	p, blockquote, ul, ol, dl, menu, .nano {
 		font-size: 1.25em;
 	}
 	
 	pre, code {
-	  font-size: 0.9375em;
+	  font-size: 1.09375em;
 	}
 	
 	hr {
@@ -568,7 +561,7 @@ article {
 		border-top: 0.078125em solid #141414;
 	  box-shadow: 0 0 0.625em rgba(255, 255, 255, 0.12);
 	}
-
+	
 	article{
 		padding: 0 1.25em 0;
 	}
@@ -597,12 +590,12 @@ article {
 		font-size: 1.125em;
 	}
 	
-	p, blockquote, ul, ol, dl, menu {
+	p, blockquote, ul, ol, dl, menu, .nano {
 		font-size: 1.5em;
 	}
 	
 	pre, code {
-	  font-size: 1.125em;
+	  font-size: 1.3125em;
 	}
 	
 	hr {
@@ -638,12 +631,12 @@ article {
 		font-size: 1.5em;
 	}
 	
-	p, blockquote, ul, ol, dl, menu {
+	p, blockquote, ul, ol, dl, menu, .nano {
 		font-size: 2em;
 	}
 	
 	pre, code {
-	  font-size: 1.5em;
+	  font-size: 1.75em;
 	}
 	
 	hr {
@@ -668,68 +661,68 @@ article {
    ========================================================================== */
 
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+  * {
+	  background: transparent !important;
+	  color: #000 !important; /* Black prints faster: h5bp.com/s */
+	  box-shadow: none !important;
+	  text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    img {
-        max-width: 100% !important;
-    }
+  img {
+    max-width: 100% !important;
+  }
 
-    @page {
-        margin: 0.5cm;
-    }
+  @page {
+    margin: 0.5cm;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
