@@ -2,8 +2,7 @@ css-playground
 ==============
 
 font-size and line-height
-=========================
-=========================
+-------------------------
 
     Basic Unit    |    Measurement    |
 ----------------- | ----------------- |
@@ -12,8 +11,7 @@ font-size and line-height
  line-height H1-H6|      0.9625em     |
 
 margin
-======
-======
+------
 
     Basic Unit    |    Measurement    |
 ----------------- | ----------------- |
@@ -21,8 +19,7 @@ margin
    margin-sub     |      0.5em        |
 
 other
-=====
-=====
+-----
 
     Basic Unit    |    Measurement    |
 ----------------- | ----------------- |
