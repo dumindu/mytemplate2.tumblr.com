@@ -1,14 +1,30 @@
 css-playground
 ==============
 
+font-size and line-height
+=========================
+=========================
+
     Basic Unit    |    Measurement    |
 ----------------- | ----------------- |
       font        | 1em = 100% = 16px |
   line-height p   |       1.5em       |
  line-height H1-H6|      0.9625em     |
+
+margin
+======
+======
+
+    Basic Unit    |    Measurement    |
 ----------------- | ----------------- |
    margin-main    |      0 0 1.5em    |
    margin-sub     |      0.5em        |
+
+other
+=====
+=====
+
+    Basic Unit    |    Measurement    |
 ----------------- | ----------------- |
 text-shadow H1-H6 | 0.0625em = 1/16   |
 
