@@ -17,6 +17,10 @@
                       |                   |
    margin-sub         |      0.75em       |
    text-shadow H1-H6  | 0.0625em = 1/16   |
+                      |                   |
+   font PRE/CODE      |      0.875em      |
+   font FIGCAPTION    |      0.875em      |
+   
 
 ###RWD Measurements###
  viewport type |    viewport info   |  font size  |  P 1x  |  H1 1.5x  |  H2 1.25x  |  H3 1x  |  H4,H5,H6 .75x  | 
@@ -25,3 +29,13 @@
     Tablet     |  min-width: 35em   |    1.25em   |  20/30 |    30     |     25     |   20    |        15       |
     Desktop    |  min-width: 76.5em |    1.5em    |  24/36 |    36     |     30     |   24    |        18       |
     TV         |  min-width: 114em  |    2em      |  32/48 |    48     |     40     |   32    |        24       |
+
+
+##Media figure classes##
+
+*figure_landscape_large
+*figure_landscape_medium
+*figure_plandscape_small
+*figure_portrait_large
+*figure_portrait_medium
+*figure_portrait_small
