@@ -290,30 +290,33 @@ figure:after, .figure:after {
 }
 
 figure, .figure{
-  margin: 0 0 0.75em;
-  background: rgba(0, 0, 0, 0.12);
+  margin: 0 auto 1.5em;
+  background: rgba(0, 0, 0, 0.25);
   border: 0.0625em solid #141414;
   border-radius: 0.1875em;
-  box-shadow: 0 0 0.0625em rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0.071428571em rgba(0, 0, 0, 0.25);
 }
 
 figure img, .figure img{
   display: block;
   width: 100%;
   float: left;
-  padding: 0.375em;
+  padding: 0.5em;
 }
 
 figure figcaption , .figure .figcaption{
-  padding: 0.428571429em;
+  padding: 0.5em;
   font-size: 0.875em;
-  color: #666666;
-	text-shadow: 0 0.071428571em 0.071428571em #000000;
+  color: #919191;
+	text-shadow: 0 0.0625em 0.0625em #000000;
 }
 figure figcaption p, figure figcaption ul, figure figcaption ol, figure figcaption dl, figure figcaption blockquote, .figure .figcaption p, .figure .figcaption ul, .figure .figcaption ol, .figure .figcaption dl, .figure .figcaption blockquote {
   margin: 0 0 0.428571429em;
 }
-
+figure figcaption pre{
+	font-size: inherit;
+	margin-bottom: 0;
+}
 /* =============================================================================
    prettify
    ========================================================================== */
@@ -547,7 +550,7 @@ article {
 		font-size: 0.9375em;
 	}
 	
-	p, blockquote, ul, ol, dl, menu, .nano {
+	p, blockquote, ul, ol, dl, menu {
 		font-size: 1.25em;
 	}
 	
@@ -562,12 +565,63 @@ article {
 	  box-shadow: 0 0 0.625em rgba(255, 255, 255, 0.12);
 	}
 	
+	figure, .figure{
+		font-size: 1.25em;
+	}
+	
+	/* =============================================================================
+   Figure sizes For landscape mode
+   ========================================================================== */
+	.figure_landscape_large{
+		width: 80%;
+	}
+	.figure_landscape_medium{
+		width: 60%;
+	}
+	.figure_landscape_small{
+		width: 40%;
+	}
+	
+	.figure_portrait_large {
+		width: 60%;
+	}
+	.figure_portrait_medium {
+		width: 40%;
+	}
+	.figure_portrait_small {
+		width: 20%;
+	}
+	
 	article{
 		padding: 0 1.25em 0;
 	}
 
 }
-
+/* =============================================================================
+   Figure sizes For portrait mode
+   ========================================================================== */
+@media only screen and (min-width: 35em) and (orientation : portrait) {
+	.figure_landscape_large{
+		width: 100%;
+	}
+	.figure_landscape_medium{
+		width: 80%;
+	}
+	.figure_landscape_small{
+		width: 60%;
+	}
+	
+	.figure_portrait_large {
+		width: 80%;
+	}
+	.figure_portrait_medium {
+		width: 60%;
+	}
+	.figure_portrait_small {
+		width: 40%;
+	}
+	
+}
 /* =============================================================================
    Typography For Desktop
    ========================================================================== */
@@ -590,7 +644,7 @@ article {
 		font-size: 1.125em;
 	}
 	
-	p, blockquote, ul, ol, dl, menu, .nano {
+	p, blockquote, ul, ol, dl, menu {
 		font-size: 1.5em;
 	}
 	
@@ -603,6 +657,10 @@ article {
 		margin: 1.5em 0;
 		border-top: 0.09375em solid #141414;
 	  box-shadow: 0 0 0.75em rgba(255, 255, 255, 0.12);
+	}
+	
+	figure, .figure{
+		font-size: 1.5em;
 	}
 
 	article{
@@ -631,7 +689,7 @@ article {
 		font-size: 1.5em;
 	}
 	
-	p, blockquote, ul, ol, dl, menu, .nano {
+	p, blockquote, ul, ol, dl, menu {
 		font-size: 2em;
 	}
 	
@@ -644,6 +702,10 @@ article {
 		margin: 2em 0;
 		border-top: 0.125em solid #141414;
 	  box-shadow: 0 0 1em rgba(255, 255, 255, 0.12);
+	}
+	
+	figure, .figure{
+		font-size: 2em;
 	}
 
 	article{
