@@ -118,6 +118,27 @@ textarea {
 	padding: 0.2em 0;
 }
 
+/*============================================================================
+ Model Overlay : user defined
+ ============================================================================*/
+.modal_overlay{
+	width: 100%;
+	height: 100%;
+	z-index: 300;
+	position: fixed;
+	top: 0;
+	padding: 0.5em;
+	background-color: #333333;
+}
+	.modal_container{
+		width: inherit;
+	 	height: inherit;
+	 	padding: 0.5em;
+		background-color: #222222;
+	 	border: 0.0625em solid #141414;
+	  border-radius: 0.25em;
+	}
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -602,6 +623,11 @@ article {
 		width: 30%;
 	}
 	
+	/*custom styles for modal dialog*/
+	.modal_overlay{
+		font-size: 1.25em;
+	}
+	
 	/*custom styles for page elements*/
 	article{
 		padding: 0 1.25em 0;
@@ -680,6 +706,11 @@ article {
 		font-size: 1.5em;
 	}
 	
+	/*custom styles for modal dialog*/
+	.modal_overlay{
+		font-size: 1.5em;
+	}
+	
 	/*custom styles for page elements*/
 	article{
 		padding: 0 1.5em 0;
@@ -727,6 +758,11 @@ article {
 	}
 	
 	figure, .figure{
+		font-size: 2em;
+	}
+	
+	/*custom styles for modal dialog*/
+	.modal_overlay{
 		font-size: 2em;
 	}
 	
