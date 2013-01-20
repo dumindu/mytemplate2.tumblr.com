@@ -33,9 +33,14 @@
 
 ##Media figure classes##
 
-*figure_landscape_large
-*figure_landscape_medium
-*figure_plandscape_small
-*figure_portrait_large
-*figure_portrait_medium
-*figure_portrait_small
+* figure_landscape_large
+* figure_landscape_medium
+* figure_landscape_small
+* figure_portrait_large
+* figure_portrait_medium
+* figure_portrait_small
+
+
+
+IE10+, No HTML5 Cross Browser Polyfills.
+Thanks

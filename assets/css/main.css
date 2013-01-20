@@ -161,10 +161,10 @@ a:focus {
 }
 
 a svg{
-	fill: #707070;
+	fill: #191919;
 }
-a svg:hover{
-	fill: #CCCCCC;
+a:focus svg, a svg:hover{
+	fill: #0D0D0D;
 }
 
 /* =============================================================================
@@ -267,7 +267,7 @@ pre, code {
 	background: rgba(0, 0, 0, 0.25);
   padding: 0.3125em;
 }
-p pre, p code{
+p pre, p code, ul pre, ul code{
 	font-size: 0.875em;
 }
 
@@ -291,15 +291,22 @@ blockquote p{
 	font-size: inherit;
 	margin-bottom: 0.75em;
 }
-blockquote cite {
+blockquote cite,
+/*Only For Tumblr*/
+blockquote .cite{
 	display: block;
 }
 
-blockquote cite:before {
+blockquote cite:before,
+/*Only For Tumblr*/
+blockquote .cite:before {
 	content: "\2014 \0020";
 }
 
-blockquote cite a, blockquote cite a:visited {
+pre a, code a,
+blockquote cite a, blockquote cite a:visited,
+/*Only For Tumblr*/
+blockquote .cite a, blockquote .cite a:visited {
 	color: #b6b6b6;
 }
 
@@ -318,10 +325,14 @@ figure, .figure{
   background: rgba(0, 0, 0, 0.25);
   border: 0.0625em solid #141414;
   border-radius: 0.1875em;
-  box-shadow: 0 0 0.071428571em rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.3125em 0.3125em -0.1875em rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
 
-figure img, .figure img{
+figure img, .figure img, 
+figure iframe, .figure iframe, 
+figure object, .figure object, 
+figure embed, .figure embed{
   display: block;
   width: 100%;
   float: left;
@@ -332,14 +343,122 @@ figure figcaption , .figure .figcaption{
   padding: 0.5em;
   font-size: 0.875em;
   color: #919191;
-	text-shadow: 0 0.0625em 0.0625em #000000;
+	text-shadow: 0 0.071428571em 0.071428571em #000000;
 }
 figure figcaption p, figure figcaption ul, figure figcaption ol, figure figcaption dl, figure figcaption blockquote, .figure .figcaption p, .figure .figcaption ul, .figure .figcaption ol, .figure .figcaption dl, .figure .figcaption blockquote {
   margin: 0 0 0.428571429em;
 }
-figure figcaption pre, .figure figcaption pre{
+figure figcaption p, .figure figcaption p, figure figcaption pre, .figure figcaption pre, figure figcaption ul, figure figcaption ol, figure figcaption dl, .figure .figcaption ul, .figure .figcaption ol, .figure .figcaption dl{
 	font-size: inherit;
 	margin-bottom: 0;
+}
+/* =============================================================================
+   Button
+   ========================================================================== */
+.btn {
+  position: relative;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.12);
+  border: 0.0625em solid #141414;
+  border-radius: 0.1875em;
+  box-shadow: 0 0.3125em 0.3125em -0.1875em rgba(0, 0, 0, 0.25);
+  color: #919191;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: normal;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.4em 0.75em;
+}
+	.btn:hover, .btn:focus, .btn:active, .btn:visited {
+		text-decoration: none;
+		background: rgba(0, 0, 0, 0.25);
+		box-shadow: 0.3125em 0.3125em -0.1875em rgba(0, 0, 0, 0.5);
+		color: #919191;
+	}
+	.btn:focus {
+		outline: 0;
+	}
+	.btn:active {
+		box-shadow: inset 0 0 0.1875em 0.1875em rgba(0, 0, 0, 0.12);
+	}
+
+.btn.disabled, .btn.disabled:hover, .btn.disabled:active{
+	color: #5C5C5C;
+	border-color: #1F1F1F;
+	background: rgba(255, 255, 255, 0.06);
+	box-shadow: inset 0 0 0.1875em 0.1875em rgba(0, 0, 0, 0.12);
+	cursor: not-allowed;
+}
+.btn.disabled:focus{
+	background: rgba(255, 255, 255, 0.12);
+}
+/* =============================================================================
+   Button group and toolbar
+   ========================================================================== */
+.btn + .btn,
+.btn + .btn-group,
+.btn_group + .btn,
+.btn_group + .btn_group {
+  margin-left: 0.25em;
+}
+
+.btn_group {
+  display: inline-block;
+}
+.btn_group .btn {
+  float: left;
+  margin-left: -0.0625em;
+}
+.btn_group .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.btn_group .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-left: 0;
+}
+.btn_group .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn_toolbar .btn,
+.btn_toolbar .btn_group {
+  vertical-align: top;
+}
+
+/* =============================================================================
+   Icons
+   ========================================================================== */
+.icon{
+	width: 2em;
+	height: 2em;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+.icon_container{
+	display: inline-block;
+}
+.icon_container .icon{
+	vertical-align: top;
+}
+.icon + .icon,
+.icon + .icon_container,
+.icon_container + .icon{
+  margin-left: 1em;
+}
+.icon a, .icon svg{
+	width:inherit;
+	height: inherit;
+}
+.icon a:focus{
+	outline: none;
 }
 /* =============================================================================
    prettify
@@ -375,6 +494,26 @@ ol.linenums li {
   color: #bebec5;
   line-height: 1.285714286em;
   text-shadow: 0 0.071428571em 0 #000;
+}
+
+/* =============================================================================
+   jqPagination
+   ========================================================================== */
+.pagination{
+	margin: 1em auto;
+	text-align: center;
+}
+	.pagination .first, .pagination .last {
+		display: none;
+	}
+
+.pagination input[type="text"]{
+	background: rgba(0, 0, 0, 0.12);
+	border: 0.0625em solid #141414;
+  border-radius: 0.1875em;
+  box-shadow: 0 0.3125em 0.3125em -0.1875em rgba(0, 0, 0, 0.25);
+  padding: 0.5em;
+  text-align: center;
 }
 
 /* =============================================================================
@@ -439,9 +578,299 @@ ol.linenums li {
 /* ==========================================================================
    custom styles for page elements
    ========================================================================== */
-article {
-	padding: 0 0.5em 0;
+header{
+	padding: 1.5em .5em;
+	background: rgba(0, 0, 0, 0.25);
+	text-align: center;
+	border-bottom: 0.0625em solid #141414;
+	margin-bottom: 1.5em;
+	box-shadow: 0 0.3125em 0.3125em -0.1875em rgba(0, 0, 0, 0.5);
+	color: #919191;
 }
+header img{
+	border: 0.1875em solid #919191;
+	border-radius: 5.625em;
+	height: 5.625em;
+	width: 5.625em;
+}
+header p{
+	margin-bottom: 0;
+}
+article {
+	padding: 0.5em .75em;
+}
+nav{
+	margin: 1em auto;
+	text-align: center;
+}
+
+article .meta time{
+	position:relative;
+	display: inline-block;
+	margin-left: .5em;
+	color: rgba(0, 0, 0, 0.5);
+	text-shadow: 0 0.0625em 0.0625em rgba(255, 255, 255, 0.06);
+}
+.dsq_comment_count{
+	float: right;
+}
+#disqus_thread{
+	margin-top: 2em;
+}
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* =============================================================================
+   Figure tweek For Mobile
+   ========================================================================== */
+@media only screen and (max-width: 35em) and (orientation : landscape) {
+	.figure_portrait_large, .figure_portrait_medium, .figure_portrait_small {
+		width: 60%;
+	}
+}
+
+
+/* =============================================================================
+   Styles For Tablet
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+	
+	/*Typography*/
+	h1, .h1 {
+	  font-size: 1.875em;
+	}
+	
+	h2, .h2 {
+		font-size: 1.5625em;
+	}
+	
+	h3, .h3 {
+		font-size: 1.25em;
+	}
+	
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		font-size: 0.9375em;
+	}
+	
+	p, blockquote, ul, ol, dl, menu {
+		font-size: 1.25em;
+	}
+	
+	pre, code {
+	  font-size: 1.09375em;
+	}
+	
+	hr {
+		height: 0.078125em;
+		margin: 1.25em 0;
+		border-top: 0.078125em solid #141414;
+	  box-shadow: 0 0 0.625em rgba(255, 255, 255, 0.12);
+	}
+	
+	figure, .figure{
+		font-size: 1.25em;
+	}
+	
+	/* Figure sizes For landscape mode*/
+	.figure_landscape_large{
+		width: 80%;
+	}
+	.figure_landscape_medium{
+		width: 60%;
+	}
+	.figure_landscape_small{
+		width: 40%;
+	}
+	
+	.figure_portrait_large {
+		width: 50%;
+	}
+	.figure_portrait_medium {
+		width: 40%;
+	}
+	.figure_portrait_small {
+		width: 30%;
+	}
+	
+	/*custom styles for modal dialog*/
+	.modal_overlay{
+		font-size: 1.25em;
+	}
+	
+	/*custom styles for page elements*/
+	article{
+		padding: 2.5em 0.9375em;
+	}
+	.btn, .pagination input[type="text"], .icon_container, article .meta {
+		font-size: 1.25em;
+	}
+	.pagination .first, .pagination .last {
+		display: inline-block;
+	}
+	#disqus_thread{
+		margin: 2.5em 2.5em 0;
+	}
+
+}
+
+
+/* =============================================================================
+   Figure sizes For portrait mode
+   ========================================================================== */
+@media only screen and (min-width: 35em) and (orientation : portrait) {
+	.figure_landscape_large{
+		width: 100%;
+	}
+	.figure_landscape_medium{
+		width: 80%;
+	}
+	.figure_landscape_small{
+		width: 60%;
+	}
+	
+	.figure_portrait_large {
+		width: 80%;
+	}
+	.figure_portrait_medium {
+		width: 60%;
+	}
+	.figure_portrait_small {
+		width: 40%;
+	}
+	
+}
+
+
+/* =============================================================================
+   Styles For Desktop
+   ========================================================================== */
+@media only screen and (min-width: 76.5em) {
+	
+	/*Typography*/
+	h1, .h1 {
+	  font-size: 2.25em;
+	}
+	
+	h2, .h2 {
+		font-size: 1.875em;
+	}
+	
+	h3, .h3 {
+		font-size: 1.5em;
+	}
+	
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		font-size: 1.125em;
+	}
+	
+	p, blockquote, ul, ol, dl, menu {
+		font-size: 1.5em;
+	}
+	
+	pre, code {
+	  font-size: 1.3125em;
+	}
+	
+	hr {
+		height: 0.09375em;
+		margin: 1.5em 0;
+		border-top: 0.09375em solid #141414;
+	  box-shadow: 0 0 0.75em rgba(255, 255, 255, 0.12);
+	}
+	
+	figure, .figure{
+		font-size: 1.5em;
+	}
+	
+	/*custom styles for modal dialog*/
+	.modal_overlay{
+		font-size: 1.5em;
+	}
+	
+	/*custom styles for page elements*/
+	article{
+		padding: 3em 1.125em;
+	}
+	.btn, .pagination input[type="text"], .icon_container, article .meta {
+		font-size: 1.5em;
+	}
+	#disqus_thread{
+		margin: 3em 3em 0;
+	}
+}
+
+
+/* =============================================================================
+   Styles For TV
+   ========================================================================== */
+@media only screen and (min-width: 114em) {
+	
+	/*Typography*/
+	h1, .h1 {
+	  font-size: 3em;
+	}
+	
+	h2, .h2 {
+		font-size: 2.5em;
+	}
+	
+	h3, .h3 {
+		font-size: 2em;
+	}
+	
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		font-size: 1.5em;
+	}
+	
+	p, blockquote, ul, ol, dl, menu {
+		font-size: 2em;
+	}
+	
+	pre, code {
+	  font-size: 1.75em;
+	}
+	
+	hr {
+		height: 0.125em;
+		margin: 2em 0;
+		border-top: 0.125em solid #141414;
+	  box-shadow: 0 0 1em rgba(255, 255, 255, 0.12);
+	}
+	
+	figure, .figure{
+		font-size: 2em;
+	}
+	
+	/*custom styles for modal dialog*/
+	.modal_overlay{
+		font-size: 2em;
+	}
+	
+	/*custom styles for page elements*/
+	article{
+		padding: 4em 1.5em;
+	}
+	.btn, .pagination input[type="text"], .icon_container, article .meta {
+		font-size: 2em;
+	}
+	#disqus_thread{
+		margin: 4em 4em 0;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
 
 /* ==========================================================================
    Helper classes
@@ -542,239 +971,6 @@ article {
 
 .clearfix {
 	*zoom: 1;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-/* =============================================================================
-   Figure tweek For Mobile
-   ========================================================================== */
-@media only screen and (max-width: 35em) and (orientation : landscape) {
-	.figure_portrait_large, .figure_portrait_medium, .figure_portrait_small {
-		width: 60%;
-	}
-}
-
-
-/* =============================================================================
-   Styles For Tablet
-   ========================================================================== */
-@media only screen and (min-width: 35em) {
-	
-	/*Typography*/
-	h1, .h1 {
-	  font-size: 1.875em;
-	}
-	
-	h2, .h2 {
-		font-size: 1.5625em;
-	}
-	
-	h3, .h3 {
-		font-size: 1.25em;
-	}
-	
-	h4, .h4,
-	h5, .h5,
-	h6, .h6 {
-		font-size: 0.9375em;
-	}
-	
-	p, blockquote, ul, ol, dl, menu {
-		font-size: 1.25em;
-	}
-	
-	pre, code {
-	  font-size: 1.09375em;
-	}
-	
-	hr {
-		height: 0.078125em;
-		margin: 1.25em 0;
-		border-top: 0.078125em solid #141414;
-	  box-shadow: 0 0 0.625em rgba(255, 255, 255, 0.12);
-	}
-	
-	figure, .figure{
-		font-size: 1.25em;
-	}
-	
-	/* Figure sizes For landscape mode*/
-	.figure_landscape_large{
-		width: 80%;
-	}
-	.figure_landscape_medium{
-		width: 60%;
-	}
-	.figure_landscape_small{
-		width: 40%;
-	}
-	
-	.figure_portrait_large {
-		width: 50%;
-	}
-	.figure_portrait_medium {
-		width: 40%;
-	}
-	.figure_portrait_small {
-		width: 30%;
-	}
-	
-	/*custom styles for modal dialog*/
-	.modal_overlay{
-		font-size: 1.25em;
-	}
-	
-	/*custom styles for page elements*/
-	article{
-		padding: 0 1.25em 0;
-	}
-
-}
-
-
-/* =============================================================================
-   Figure sizes For portrait mode
-   ========================================================================== */
-@media only screen and (min-width: 35em) and (orientation : portrait) {
-	.figure_landscape_large{
-		width: 100%;
-	}
-	.figure_landscape_medium{
-		width: 80%;
-	}
-	.figure_landscape_small{
-		width: 60%;
-	}
-	
-	.figure_portrait_large {
-		width: 80%;
-	}
-	.figure_portrait_medium {
-		width: 60%;
-	}
-	.figure_portrait_small {
-		width: 40%;
-	}
-	
-}
-
-
-/* =============================================================================
-   Styles For Desktop
-   ========================================================================== */
-@media only screen and (min-width: 76.5em) {
-	
-	/*Typography*/
-	h1, .h1 {
-	  font-size: 2.25em;
-	}
-	
-	h2, .h2 {
-		font-size: 1.875em;
-	}
-	
-	h3, .h3 {
-		font-size: 1.5em;
-	}
-	
-	h4, .h4,
-	h5, .h5,
-	h6, .h6 {
-		font-size: 1.125em;
-	}
-	
-	p, blockquote, ul, ol, dl, menu {
-		font-size: 1.5em;
-	}
-	
-	pre, code {
-	  font-size: 1.3125em;
-	}
-	
-	hr {
-		height: 0.09375em;
-		margin: 1.5em 0;
-		border-top: 0.09375em solid #141414;
-	  box-shadow: 0 0 0.75em rgba(255, 255, 255, 0.12);
-	}
-	
-	figure, .figure{
-		font-size: 1.5em;
-	}
-	
-	/*custom styles for modal dialog*/
-	.modal_overlay{
-		font-size: 1.5em;
-	}
-	
-	/*custom styles for page elements*/
-	article{
-		padding: 0 1.5em 0;
-	}
-}
-
-
-/* =============================================================================
-   Styles For TV
-   ========================================================================== */
-@media only screen and (min-width: 114em) {
-	
-	/*Typography*/
-	h1, .h1 {
-	  font-size: 3em;
-	}
-	
-	h2, .h2 {
-		font-size: 2.5em;
-	}
-	
-	h3, .h3 {
-		font-size: 2em;
-	}
-	
-	h4, .h4,
-	h5, .h5,
-	h6, .h6 {
-		font-size: 1.5em;
-	}
-	
-	p, blockquote, ul, ol, dl, menu {
-		font-size: 2em;
-	}
-	
-	pre, code {
-	  font-size: 1.75em;
-	}
-	
-	hr {
-		height: 0.125em;
-		margin: 2em 0;
-		border-top: 0.125em solid #141414;
-	  box-shadow: 0 0 1em rgba(255, 255, 255, 0.12);
-	}
-	
-	figure, .figure{
-		font-size: 2em;
-	}
-	
-	/*custom styles for modal dialog*/
-	.modal_overlay{
-		font-size: 2em;
-	}
-	
-	/*custom styles for page elements*/
-	article{
-		padding: 0 2em 0;
-	}
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
