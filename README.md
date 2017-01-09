@@ -1,8 +1,15 @@
-#CSS Playground#
+# My Second Attempt Of Responsive Web Design
+#### A Responsive template created for Tumblr blogging platform in 2012-2013
 
-##Typography##
+![My Second Attempt Of Responsive Web Design in 2012-2013](http://i.imgur.com/ZmHU8DW.png)
 
-###font-size and line-height, margins and etc###
+* Tools: HTML5, CSS3, HTML5 Boilerplate, Non-pixel/ Em Based Units and CSS Media Queries. 
+* Design: www.behance.net/gallery/New-Tumblr-theme/6648753 
+* Code: www.github.com/dumindu/mytemplate2.tumblr.com
+
+
+## Typography
+#### font-size and line-height, margins and etc
     Basic Unit        |    Measurement    |
 --------------------- | ----------------- |
    font               | 1em = 100% = 16px |
@@ -22,7 +29,7 @@
    font FIGCAPTION    |      0.875em      |
    
 
-###RWD Measurements###
+#### RWD Measurements
  viewport type |    viewport info   |  font size  |  P 1x  |  H1 1.5x  |  H2 1.25x  |  H3 1x  |  H4,H5,H6 .75x  | 
 -------------- | ------------------ | ----------- | ------ | --------- | ---------- | ------- | --------------- |
     Mobile     |  default           |    1em      |  16/24 |    24     |     20     |   16    |        12       |
@@ -31,8 +38,7 @@
     TV         |  min-width: 114em  |    2em      |  32/48 |    48     |     40     |   32    |        24       |
 
 
-##Media figure classes##
-
+## Media figure classes
 * figure_landscape_large
 * figure_landscape_medium
 * figure_landscape_small
@@ -41,6 +47,4 @@
 * figure_portrait_small
 
 
-
-IE10+, No HTML5 Cross Browser Polyfills.
-Thanks
+Last updated : January, 2013
